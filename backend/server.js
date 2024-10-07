@@ -13,7 +13,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://event:event@cluster0.0bxegcp.mongodb.net/event?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('mongodb+srv://jadavmohit92:Mohit@cluster0.qopoq.mongodb.net/', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 }).then(() => {
