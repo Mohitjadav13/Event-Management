@@ -1,4 +1,4 @@
-name: CI-CD Pipeline for Event-Management
+name: CI-CD Pipeline for MERN App
 
 on:
   push:
@@ -10,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: Checkout code
-       uses: actions/checkout@v3
+       uses: actions/checkout@v2
 
      - name: Set up Node.js
-       uses: actions/setup-node@v3
+       uses: actions/setup-node@v2
        with:
          node-version: '14'
 
       - name: Install backend dependencies
-      run: npm install
+        run: npm install
 
       - name: Install frontend dependencies
         run: |
@@ -46,10 +46,8 @@ jobs:
           username: your-server-username
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /path/to/your/app
+            cd https://github.com/Mohitjadav13/Event-Management/edit/main/.github/workflows/ci-cd.yml
             git pull origin main
             npm install
             npm run build --prefix client
             pm2 restart all
-    
-    
